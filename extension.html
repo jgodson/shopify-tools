@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Options Popup</title>
+    <style>
+    body {
+      overflow: hidden;
+      margin: 0px;
+      padding: 0px;
+      background: white;
+      font-family: sans-serif;
+      font-size: 1rem;
+      width: 200px;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 1.1rem;
+      padding: 10px 0 5px 0;
+      margin-top: 0px;
+      font-weight: bold;
+    }
+
+    .hr {
+      border-bottom: 2px solid #C4CDD5;
+      width: 90%;
+      margin: auto;
+    }
+
+    .menu-option {
+      cursor: pointer;
+      padding: 1px 0px 1px 20px;
+      line-height: 40px;
+    }
+
+    .menu-option:hover {
+      background: #5C6AC4;
+    }
+    </style>
+    <script src="/js/extension.js"></script>
+  </head>
+  <body>
+    <div class="title">Shopify Tools</div>
+      <div class="hr"></div>
+    <div class="menu-option" data-action="titleBarToggle">Toggle Title Bar</div>
+  </body>
+</html>
