@@ -1,0 +1,11 @@
+#AppFrameAside {
+  background: white;
+}
+
+#AppFrameMain {
+  transition: all 350ms;
+}
+
+#AppFrameMain.shopify-tools-full-width {
+  padding-left: 0;
+}
