@@ -11,13 +11,30 @@
       "default_icon": "/images/icon-40.png",
       "default_popup": "extension.html"
   },
+  "background": {
+    "scripts": ["/js/background.js"]
+  },
   "content_scripts": [
     {
       "matches": ["https://*.myshopify.com/admin/*"],
-      "css": ["/css/sidebar.css"],
+      "css": ["/css/all-admin.css"],
       "js": ["/js/jquery-3.2.1.min.js"]
     }
   ],
+  "commands": {
+    "titleBarToggle": {
+      "suggested_key": {
+        "default": "MacCtrl+Period"
+      },
+      "description": "Toggle Title Bar"
+    },
+    "sidebarToggle": {
+      "suggested_key": {
+        "default": "MacCtrl+Comma"
+      },
+      "description": "Toggle sidebar"
+    }
+  },
   "icons": {
     "16": "/images/icon-16.png",
     "30": "/images/icon-30.png",
