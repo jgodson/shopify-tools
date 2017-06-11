@@ -1,12 +1,18 @@
 ## Current Features
-- Allows you to show/hide the title bar in the Shopify Admin
+- Allows you to show/hide the title bar and the sidebar in the Shopify Admin
 - Changes the left sidebar colour to white in the Admin
 
 ## How to use
 The sidebar color will automatically change if the extension is installed and enabled
-To show or hide the title bar in the admin. Click the extension icon and select Toggle Title Bar
-![alt](https://screenshot.click/10-47-o5z24-bvqpn.jpg)
-![alt](https://screenshot.click/screenshot.jpg)
+To show or hide the title bar or sidebar in the admin. Click the extension icon and select the desired action.
+
+![alt](https://screenshot.click/Screen_Shot_2017-06-10_at_11.58.14_PM.jpg)
+
+or use the shortcut keys defined below
+
+## Key Commands
+- `Ctrl+Comma` - toggle sidebar
+- `Ctrl+Period` - toggle title bar
 
 ## Installation
 
