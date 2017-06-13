@@ -1,13 +1,8 @@
-function runScript(name) {
-  chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
-    chrome.tabs.executeScript(tabs[0].id, {file: `/js/actions/${name}.js`});
-  });
-}
-
 const ACTIONS = {
   titleBarToggle() {
     runScript('title-toggle');
   },
+
   sidebarToggle() {
     runScript('sidebar-toggle');
   }
@@ -30,3 +25,10 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     alert(`No action available for ${action}`)
   }
 });
+
+// Helper functions
+function runScript(name) {
+  chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
+    chrome.tabs.executeScript(tabs[0].id, {file: `/js/actions/${name}.js`});
+  });
+}
