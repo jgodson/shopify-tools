@@ -1,5 +1,5 @@
 ## Current Features
-- Allows you to show/hide the title bar and the sidebar in the Shopify Admin
+- Allows you to show/hide the title bar, the theme warnings bar and the sidebar in the Shopify Admin
 - Changes the left sidebar colour to white in the Admin
 - Adds some extra info about each theme to the themes page in the Admin
 - Allows you to toggle some features on/off on the options page

@@ -2,6 +2,10 @@ const ACTIONS = {
   titleBarToggle() {
     runScript('title-toggle');
   },
+  
+  themeWarningsToggle() {
+    runScript('theme-warnings-toggle');
+  },
 
   sidebarToggle() {
     runScript('sidebar-toggle');
