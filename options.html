@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shopify Tools Options</title>
+  <style>
+    body { 
+      padding: 10px;
+      font-size: 0.9rem;
+      font-family: sans-serif;
+    }
+
+    .option {
+      margin-bottom: 10px;
+    }
+
+    #Save {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      cursor: pointer;
+      font-size: 1.1rem;
+    }
+
+    #Status {
+      position: fixed;
+      left: 10%;
+      right: 10%;
+      bottom: -50%;
+      font-size: 1.3rem;
+      color: white;
+      background: rgba(0, 0, 0, 0.8);
+      border-radius: 4px;
+      padding: 10px;
+      transition: all 350ms ease-in-out;
+      z-index: 100;
+    }
+
+    #Status.shown {
+      bottom: 20%;
+    }
+
+    .status-text {
+      text-align: center;
+      display: block;
+    }
+
+    label input[type="checkbox"] {
+      background: white;
+      transform: scale(1.5);
+      padding-left: 1px;
+      margin-right: 8px;
+      outline: #5C6AC4;
+    }
+
+    label span {
+      vertical-align: middle;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="option">
+    <label>
+      <input type="checkbox" id="ChangeSidebarColor">
+      <span>Change left sidebar color to white</span>
+    </label>
+  </div>
+  <div class="option">
+    <label>
+      <input type="checkbox" id="ShowThemeInfo">
+      <span>Add theme details to theme page</span>
+    </label>
+  </div>
+
+  <div id="Status"><span class="status-text"></span></div>
+
+  <button id="Save">Save</button>
+
+  <script src="/js/options.js"></script>
+</body>
+</html>
+

@@ -1,18 +1,26 @@
 ## Current Features
 - Allows you to show/hide the title bar and the sidebar in the Shopify Admin
 - Changes the left sidebar colour to white in the Admin
+- Adds some extra info about each theme to the themes page in the Admin
+- Allows you to toggle some features on/off on the options page
 
 ## How to use
-The sidebar color will automatically change if the extension is installed and enabled
-To show or hide the title bar or sidebar in the admin. Click the extension icon and select the desired action.
+The sidebar color will automatically change to white if it is enabled in the options.
+The extended theme information will also be added to the themes page of your online store when enabled.
+To show or hide the title bar or sidebar in the admin. Click the extension icon and select the desired action
 
-![alt](https://screenshot.click/Screen_Shot_2017-06-10_at_11.58.14_PM.jpg)
+![alt](https://screenshot.click/Screen_Shot_2017-06-14_at_11.41.55_PM.jpg)
 
 or use the shortcut keys defined below
 
 ## Key Commands
 - `Ctrl+Comma` - toggle sidebar
 - `Ctrl+Period` - toggle title bar
+
+## Options Page
+There are various options available to customize the behaviour of the extension. These are available by clicking on the extension Icon and selecting `Options` from the menu.
+
+![alt](https://screenshot.click/14-29-82n62-ag9mi.jpg)
 
 ## Installation
 
@@ -33,4 +41,4 @@ I plan to put this in the Chrome Web Store, but for now just download the repo a
 6. That's it. You're good to go! 
 
 ## Updates
-Until it is published on the Chrome Web Store, when updates are release you will either need to run `git pull` or download the new zip file and replace the current folder with the new one
+Until it is published on the Chrome Web Store, when updates are released you will either need to run `git pull` or download the new zip file and replace the current folder with the new one

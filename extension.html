@@ -21,12 +21,6 @@
       font-weight: bold;
     }
 
-    .hr {
-      border-bottom: 2px solid #C4CDD5;
-      width: 90%;
-      margin: auto;
-    }
-
     .menu-option {
       cursor: pointer;
       padding: 1px 0px 1px 20px;
@@ -37,13 +31,29 @@
       background: #5C6AC4;
       color: white;
     }
+
+    .seperator {
+      border-top: 1px solid #EBEEF0;
+      border-bottom: 1px solid #EBEEF0;
+      width: 90%;
+      margin: auto;
+    }
+
+    .title + .seperator {
+      border-color: #C4CDD5;
+    }
     </style>
     <script src="/js/extension.js"></script>
   </head>
   <body>
     <div class="title">Shopify Tools</div>
-    <div class="hr"></div>
+    <div class="seperator"></div>
+
     <div class="menu-option" data-action="titleBarToggle">Toggle Title Bar</div>
     <div class="menu-option" data-action="sidebarToggle">Toggle Sidebar</div>
+
+    <div class="seperator"></div>
+
+    <div class="menu-option" data-action="goToOptions">Options</div>
   </body>
 </html>
