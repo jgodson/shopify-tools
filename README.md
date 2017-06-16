@@ -26,7 +26,7 @@ There are various options available to customize the behaviour of the extension.
 
 You can install this extension by going to the [Chrome Web Store](https://chrome.google.com/webstore/detail/shopify-tools/jgckodnbkdaknlpmehmpjahpnielmnea)
 
-If you want the extension in it's development state you can do the following:
+If you want the extension in its development state you can do the following:
 
 1. Clone the repo or download the zip file and extract it.
 
