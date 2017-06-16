@@ -26,7 +26,10 @@
         "https://*.myshopify.com/admin?*"
       ],
       "css": ["/css/all-admin.css"],
-      "js": ["/js/libs/jquery-3.2.1.min.js", "/js/libs/moment.min.js"]
+      "js": [
+        "/js/libs/jquery-3.2.1.min.js",
+        "/js/libs/moment.min.js"
+      ]
     }
   ],
   "commands": {
