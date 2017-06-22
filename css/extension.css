@@ -1,0 +1,39 @@
+body {
+  overflow: hidden;
+  margin: 0px;
+  padding: 0px;
+  background: white;
+  font-family: sans-serif;
+  font-size: 1rem;
+  width: 200px;
+}
+
+.title {
+  text-align: center;
+  font-size: 1.1rem;
+  padding: 10px 0 5px 0;
+  margin-top: 0px;
+  font-weight: bold;
+}
+
+.menu-item {
+  cursor: pointer;
+  padding: 1px 0px 1px 20px;
+  line-height: 40px;
+}
+
+.menu-item:hover {
+  background: #5C6AC4;
+  color: white;
+}
+
+.seperator {
+  border-top: 1px solid #EBEEF0;
+  border-bottom: 1px solid #EBEEF0;
+  width: 90%;
+  margin: auto;
+}
+
+.title + .seperator {
+  border-color: #C4CDD5;
+}

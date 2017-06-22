@@ -4,7 +4,9 @@
   "description": "A tool to extend and tweak the Shopify admin and apps to make your life easier",
   "version": "0.2.0",
   "permissions": [
-    "tabs", "https://*.myshopify.com/admin/*",
+    "tabs", 
+    "https://*.myshopify.com/admin*",
+    "https://*.myshopify.io/admin*",
     "storage"
   ],
   "options_ui": {
@@ -23,7 +25,7 @@
     {
       "matches": [
         "https://*.myshopify.com/admin/*",
-        "https://*.myshopify.com/admin?*"
+        "https://*.myshopify.io/admin*"
       ],
       "css": ["/css/all-admin.css"],
       "js": [
@@ -33,17 +35,17 @@
     }
   ],
   "commands": {
-    "titleBarToggle": {
+    "title-toggle": {
       "suggested_key": {
         "default": "MacCtrl+Period"
       },
       "description": "Toggle Title Bar"
     },
-    "sidebarToggle": {
+    "sidebar-toggle": {
       "suggested_key": {
         "default": "MacCtrl+Comma"
       },
-      "description": "Toggle sidebar"
+      "description": "Toggle Sidebar"
     }
   },
   "icons": {

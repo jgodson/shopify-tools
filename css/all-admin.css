@@ -5,3 +5,13 @@
 #AppFrameMain.shopify-tools-full-width {
   padding-left: 0;
 }
+
+.shopify-tools-theme-info {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #81878d;
+}
+
+.published-theme .shopify-tools-theme-info {
+  margin-top: 10px;
+}
