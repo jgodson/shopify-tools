@@ -7,11 +7,11 @@
 ## How to use
 The sidebar color will automatically change to white if it is enabled in the options.
 The extended theme information will also be added to the themes page of your online store when enabled.
-To show or hide the title bar, theme warnings, or sidebar in the admin. Click the extension icon and select the desired action
+To show or hide the title bar, theme warnings, or sidebar in the admin. Click the extension icon and select the desired action. The `Toggle Theme Warnings` item will only show up when editing theme code.
 
 ![alt](https://screenshot.click/Screen_Shot_2017-06-15_at_9.47.32_AM.jpg)
 
-or use the shortcut keys defined below
+Alternatively, you can use the keyboard shortcuts below.
 
 ## Key Commands
 - `Ctrl+Comma` - toggle sidebar

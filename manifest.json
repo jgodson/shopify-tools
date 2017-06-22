@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Shopify Tools",
   "description": "A tool to extend and tweak the Shopify admin and apps to make your life easier",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "permissions": [
     "tabs", "https://*.myshopify.com/admin/*",
     "storage"
