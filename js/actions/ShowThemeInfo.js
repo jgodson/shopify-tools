@@ -1,17 +1,3 @@
-// Insert styles
-var CSS = `
-  .shopify-tools-theme-info {
-    font-size: 1.2rem;
-    font-style: italic;
-    color: #81878d;
-  }
-`
-if ($('.shopify-tools-css').length === 0) {
-  $('head').append('<style class="shopify-tools-css">');
-}
-
-$('.shopify-tools-css')[0].sheet.insertRule(CSS, 0);
-
 // Regex to use to find theme id in url
 var THEME_ID_REGEX = new RegExp(/\/([0-9]*)\//);
 
@@ -33,7 +19,7 @@ if ($('.shopify-tools-theme-info').length === 0) {
       
       for (let index = 0; index < $themes.length; index++) {
         let $currentTheme = $($themes[index]);
-        currentId = null; 
+        let currentId = null; 
         if ($currentTheme.hasClass('published-theme')) {
           let url = ($currentTheme.find('[href*="/editor"]').attr('href'));
           currentId = THEME_ID_REGEX.exec(url)[1];
@@ -43,6 +29,11 @@ if ($('.shopify-tools-theme-info').length === 0) {
         let currentInfo = matchThemeInfo(currentId, themeInfo);
         let $target = $currentTheme.find('[class*="theme-title"]').parent();
         $target.append(generateThemeInfoHTML(currentInfo));
+
+        // If theme is processsing, watch for when it finishes
+        if (currentInfo.processing) {
+          watchTheme(currentInfo);
+        }
       }
     });
 }
@@ -50,12 +41,26 @@ if ($('.shopify-tools-theme-info').length === 0) {
 // Helper function
 function generateThemeInfoHTML(info) {
   return `
-    <br/>
     <div class="shopify-tools-theme-info">
       <p>Theme ID: ${info.id}</p>
       <p>Last updated ${moment(info.updated_at).fromNow()}</p>
     </div>
   `;
+}
+
+// Watch a processing theme and append theme info when it finishes
+function watchTheme(themeInfo) {
+  const selector = `#theme_${themeInfo.id}`;
+  let $target = $(selector);
+  const mutationTarget = $target.parent()[0];
+
+  const observer = new MutationObserver((mutation) => {
+    observer.disconnect();
+    $target = $(selector).find('[class*="theme-title"]').parent();
+    $target.append(generateThemeInfoHTML(themeInfo));
+  });
+
+  observer.observe(mutationTarget, {childList: true});
 }
 
 function matchThemeInfo(themeId, themeInfo) {
