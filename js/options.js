@@ -1,13 +1,14 @@
 // Saves options to chrome.storage.sync.
 function saveOptions() {
-  let ChangeSidebarColor = document.getElementById('ChangeSidebarColor').checked;
+  const ChangeSidebarColor = document.getElementById('ChangeSidebarColor').checked;
+  const ShowThemeInfo = document.getElementById('ShowThemeInfo').checked;
   chrome.storage.sync.set({
     ChangeSidebarColor,
     ShowThemeInfo
   }, function() {
     // Update status to let user know options were saved.
-    let status = document.getElementById('Status');
-    let statusText = status.querySelector('.status-text');
+    const status = document.getElementById('Status');
+    const statusText = status.querySelector('.status-text');
     status.classList.add('shown');
     statusText.textContent = 'Changes Saved!';
     setTimeout(function() {
