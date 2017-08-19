@@ -15,19 +15,21 @@ if ($('.shopify-tools-theme-info').length === 0) {
       }
 
       var themeInfo = response.themes;
-      var $themes = $('.published-theme, .unpublished-themes');
+      var $themes = $('.published-theme, .themes-list__row[id]');
       
       for (let index = 0; index < $themes.length; index++) {
         let $currentTheme = $($themes[index]);
         let currentId = null; 
+        let $target = null;
         if ($currentTheme.hasClass('published-theme')) {
           let url = ($currentTheme.find('[href*="/editor"]').attr('href'));
           currentId = THEME_ID_REGEX.exec(url)[1];
+          $target = $currentTheme.find('.ui-heading').parent();
         } else {
           currentId = $currentTheme.attr('id').replace('theme_', "");
+          $target = $currentTheme.find('.themes-list__theme-title').parent();
         }
         let currentInfo = matchThemeInfo(currentId, themeInfo);
-        let $target = $currentTheme.find('[class*="theme-title"]').parent();
         $target.append(generateThemeInfoHTML(currentInfo));
 
         // If theme is processsing, watch for when it finishes
@@ -54,10 +56,13 @@ function watchTheme(themeInfo) {
   let $target = $(selector);
   const mutationTarget = $target.parent()[0];
 
-  const observer = new MutationObserver((mutation) => {
-    observer.disconnect();
-    $target = $(selector).find('[class*="theme-title"]').parent();
-    $target.append(generateThemeInfoHTML(themeInfo));
+  const observer = new MutationObserver((mutations) => {
+    const targetId = selector.replace('#', '');
+    if (mutations[0].addedNodes.length > 0 && mutations[0].addedNodes[0].id === targetId) {
+      observer.disconnect();
+      $target = $(selector).find('.themes-list__theme-title').parent();
+      $target.append(generateThemeInfoHTML(themeInfo));
+    }
   });
 
   observer.observe(mutationTarget, {childList: true});
