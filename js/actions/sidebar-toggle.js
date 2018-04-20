@@ -1,4 +1,4 @@
-var $sidebar = $('#AppFrameAside');
+var $sidebar = $('#AppFrameAside, #AppFrameNav');
 var $mainFrame = $('#AppFrameMain');
 
 $sidebar.animate({width:'toggle'}, {

@@ -1,7 +1,9 @@
 // Key events handler
 chrome.commands.onCommand.addListener((command) => {
   try {
-    runScript(command);
+    getActiveTab((tab) => {
+      runScript(command, tab);
+    });
   } catch (error) {
     alert(`No action available for ${command}`);
   }
@@ -15,7 +17,9 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       break;
     default:
       try {
-        runScript(request.action);
+        getActiveTab((tab) => {
+          runScript(request.action, tab);
+        });
       } catch (error) {
         alert(`No action available for ${request.action}`);
       }
@@ -24,16 +28,20 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
 // Navigation events handler
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-  if (changeInfo.status == 'complete' && tab.active) {
+  if (changeInfo.status === 'complete' && tab.active) {
     loadOptionalScripts(tab);
   }
 });
 
 // Helper functions
-function runScript(name) {
+function getActiveTab(cb) {
   chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
-    chrome.tabs.executeScript(tabs[0].id, {file: `/js/actions/${name}.js`});
+    cb(tabs[0]);
   });
+}
+
+function runScript(name, tab) {
+  chrome.tabs.executeScript(tab.id, {file: `/js/actions/${name}.js`});
 }
 
 function loadOptionalScripts(tab) {
@@ -50,7 +58,7 @@ function loadOptionalScripts(tab) {
   }, (items) => {
     Object.keys(items).forEach((item) => {
       if (items[item] && VALID_URLS[item] && VALID_URLS[item].test(tab.url)) {
-        runScript(item);
+        runScript(item, tab);
       }
     });
   });
